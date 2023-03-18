@@ -3,6 +3,7 @@ package com.challenge.inventoryvaccinated.model.entity.inventory;
 
 import com.challenge.inventoryvaccinated.model.SchemaDB;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,6 +18,7 @@ public class Vaccine {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @NotNull
     private String name;
 
     @Column(name = "created_by")

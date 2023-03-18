@@ -30,13 +30,6 @@ public interface VaccinationService {
 
 
     /**
-     * Almacenamiento de una nueva vacunacion mediante una actualizacion de daros del usuario
-     * @param "VaccinationDTO": entidad del pojo la entidad
-     * @return guardado en la BD
-     */
-    Vaccination persistByUpdate(int id, VaccinationDto dto);
-
-    /**
      * Busqueda de las vacunaciones realizadas a un usuario
      * @param id: identificados del usuario
      * @param id: numero de dosis realizada pos el usuario
@@ -50,7 +43,7 @@ public interface VaccinationService {
      * @param "VaccinationDTO": pojo la entidad
      * @return guardado en la BD
      */
-    Vaccination persist(VaccinationDto dto);
+    Vaccination persist(int idUser, VaccinationDto dto);
 
     /**
      * Actualizacion de datos de una vacunacion

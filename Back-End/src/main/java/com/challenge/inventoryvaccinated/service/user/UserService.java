@@ -17,7 +17,6 @@ public interface UserService {
 
     /**
      * Obtiene un listado de todos los usuarios en la DB
-     *
      * @return el listado de todos los usuarios
      */
     List<UserVo> findAllVo();

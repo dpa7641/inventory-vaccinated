@@ -16,7 +16,7 @@ public class UserVo {
     private String email;
     private Date birthdate;
     private int phone;
-    private boolean vaccinated;
+    private Boolean vaccinated;
     private int idRol;
     private String rolName;
 }

@@ -2,6 +2,7 @@ package com.challenge.inventoryvaccinated.model.entity.user;
 
 import com.challenge.inventoryvaccinated.model.SchemaDB;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,6 +19,7 @@ public class Rol {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @NotNull
     private String name;
 
     @Column(name = "created_by")

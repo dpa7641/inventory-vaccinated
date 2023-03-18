@@ -2,6 +2,8 @@ package com.challenge.inventoryvaccinated.model.entity.inventory;
 
 import com.challenge.inventoryvaccinated.model.SchemaDB;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,10 +20,13 @@ public class Vaccination {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Past
     private Date date;
     private int doses;
+    @NotNull
     @Column(name = "id_user")
     private int idUser;
+    @NotNull
     @Column(name = "id_vaccine")
     private int idVaccine;
 
