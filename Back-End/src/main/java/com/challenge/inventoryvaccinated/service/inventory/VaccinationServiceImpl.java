@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Date;
 import java.util.Optional;
 
 @Service
@@ -26,11 +27,17 @@ public class VaccinationServiceImpl implements  VaccinationService{
 
     @Override
     public List<VaccinationVo> findAllVo() {
-        List<Vaccination> list = repository.findAll();
+        List<Object[]> list = repository.findAllVo();
         List<VaccinationVo> result = new ArrayList<>(list.size());
-        for (Vaccination entity : list) {
+        for (Object[] object: list) {
             VaccinationVo vo = new VaccinationVo();
-            BeanUtils.copyProperties(entity, vo);
+            vo.setId((Integer) object[0]);
+            vo.setDate((Date) object[1]);
+            vo.setDoses((Integer) object[2]);
+            vo.setIdUser((Integer) object[3]);
+            vo.setIdVaccine((Integer) object[4]);
+            vo.setUserName((String) object[5]);
+            vo.setVaccineName((String) object[6]);
             result.add(vo);
         }
         return result;
@@ -48,23 +55,14 @@ public class VaccinationServiceImpl implements  VaccinationService{
 
     @Override
     @Transactional
-    public Vaccination persist(VaccinationDto dto) {
-        Vaccination entity = new Vaccination();
-        BeanUtils.copyProperties(dto, entity);
-        return repository.save(entity);
-    }
-
-    @Override
-    @Transactional
-    public Vaccination persistByUpdate(int id, VaccinationDto dto) {
+    public Vaccination persist(int idUser, VaccinationDto dto) {
         Vaccination entity = new Vaccination();
         entity.setDate(dto.getDate());
         entity.setDoses(dto.getDoses());
         entity.setIdVaccine(dto.getIdVaccine());
-        entity.setIdUser(id);
+        entity.setIdUser(idUser);
         return repository.save(entity);
     }
-
 
 
     @Override

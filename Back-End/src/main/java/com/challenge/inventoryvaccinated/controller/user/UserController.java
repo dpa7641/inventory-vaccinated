@@ -2,11 +2,14 @@ package com.challenge.inventoryvaccinated.controller.user;
 
 
 import com.challenge.inventoryvaccinated.commons.ResultResponse;
+import com.challenge.inventoryvaccinated.model.entity.inventory.Vaccination;
+import com.challenge.inventoryvaccinated.model.entity.user.Config;
 import com.challenge.inventoryvaccinated.model.entity.user.User;
 import com.challenge.inventoryvaccinated.model.enums.HttpResponseMessage;
 import com.challenge.inventoryvaccinated.model.pojo.user.dto.UserDto;
 import com.challenge.inventoryvaccinated.model.pojo.user.vo.UserVo;
 import com.challenge.inventoryvaccinated.service.inventory.VaccinationService;
+import com.challenge.inventoryvaccinated.service.user.ConfigService;
 import com.challenge.inventoryvaccinated.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,16 +22,19 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/usuario")
 public class UserController {
 
     private final UserService userService;
     private final VaccinationService vaccinationService;
+    private final ConfigService configService;
 
     @Autowired
-    public UserController(UserService userService, VaccinationService vaccinationService) {
+    public UserController(UserService userService, VaccinationService vaccinationService, ConfigService configService) {
         this.userService = userService;
         this.vaccinationService = vaccinationService;
+        this.configService = configService;
     }
 
     @GetMapping
@@ -91,7 +97,17 @@ public class UserController {
             user.setIdRol(user.getIdRol());
             userService.update(user);
             if(dto.getVaccinated()){
-                vaccinationService.persistByUpdate(id, dto.getVacuna());
+                Optional<Vaccination> entityVacci = vaccinationService.finByIdByDoses(id, dto.getVacuna().getDoses());
+                if(entityVacci.isPresent()){
+                    Vaccination vacci = entityVacci.get();
+                    vacci.setDate(dto.getVacuna().getDate());
+                    vacci.setDoses(dto.getVacuna().getDoses());
+                    vacci.setIdVaccine(dto.getVacuna().getIdVaccine());
+                    vacci.setIdUser(id);
+                    vaccinationService.update(vacci);
+                }else{
+                    vaccinationService.persist(id, dto.getVacuna());
+                }
             }
             return new ResponseEntity<>(ResultResponse.builder().status(true).message(HttpResponseMessage.UPDATE_SUCCESSFUL.getValue()).build(), HttpStatus.OK);
         }
@@ -102,6 +118,8 @@ public class UserController {
     public ResponseEntity<?> delete(@PathVariable("id") int id) {
         Optional<User> entity = userService.findById(id);
         if (entity.isPresent()) {
+            Optional<Config> entityConfig = configService.findByIdUser(id);
+            configService.delete(entityConfig.get());
             userService.delete(entity.get());
             return new ResponseEntity<>(ResultResponse.builder().status(true).message(HttpResponseMessage.DELETE_SUCCESSFUL.getValue()).build(), HttpStatus.OK);
         }

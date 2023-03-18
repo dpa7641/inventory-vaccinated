@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/vacunacion")
 public class VaccinationController {
 
@@ -41,9 +42,9 @@ public class VaccinationController {
         return new ResponseEntity<>(ResultResponse.builder().status(false).message(HttpResponseMessage.NOT_FOUND_RECORD.getValue()).build(), HttpStatus.OK);
     }
 
-    @PostMapping
-    public ResponseEntity<?> persist(@RequestBody VaccinationDto dto) {
-        Vaccination entity = vaccinationService.persist(dto);
+    @PostMapping("/{id}")
+    public ResponseEntity<?> persist(@PathVariable("id") int id, @RequestBody VaccinationDto dto) {
+        Vaccination entity = vaccinationService.persist(id, dto);
         return new ResponseEntity<>(ResultResponse.builder().status(true).message(HttpResponseMessage.PERSIST_SUCCESSFUL.getValue()).data(entity.getId()).build(), HttpStatus.CREATED);
     }
 

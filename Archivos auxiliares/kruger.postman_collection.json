@@ -1,0 +1,677 @@
+{
+	"info": {
+		"_postman_id": "042f6607-4b1e-4567-a547-bd6e42680dd4",
+		"name": "kruger",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9202701"
+	},
+	"item": [
+		{
+			"name": "vacunacion",
+			"item": [
+				{
+					"name": "find_all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/vacunacion",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"vacunacion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find_by_id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/vacunacion/1",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"vacunacion",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "persist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"2023-03-17\",\r\n    \"doses\": 1,\r\n    \"idVaccine\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9090/vacunacion/23",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"vacunacion",
+								"23"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"2023-03-17\",\r\n    \"doses\": 1,\r\n    \"idUser\": 1,\r\n    \"idVaccine\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9090/vacunacion/16",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"vacunacion",
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/vacunacion/1",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"vacunacion",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "vacuna",
+			"item": [
+				{
+					"name": "find_all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/vacuna",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"vacuna"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find_by_id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/vacuna/1",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"vacuna",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find_by_name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/vacuna?name=",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"vacuna"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "persist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"name\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9090/vacuna",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"vacuna"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"name\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9090/vacuna/1",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"vacuna",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/vacuna/1",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"vacuna",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "rol",
+			"item": [
+				{
+					"name": "find_all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/rol",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"rol"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find_by_id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/rol/1",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"rol",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find_by_name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/rol?name=",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"rol"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "persist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"name\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9090/rol",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"rol"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"name\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9090/rol/1",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"rol",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/rol/1",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"rol",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "config",
+			"item": [
+				{
+					"name": "find_all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/config",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"config"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find_by_id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/config/1",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"config",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"name\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9090/config/1",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"config",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "find_all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/usuario",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find_by_id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/usuario/1",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"usuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find_by_id_vaccinated",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/usuario/v/true",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"usuario",
+								"v",
+								"true"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find_all_user_by_rol",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/usuario/rol/1",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"usuario",
+								"rol",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find_all_user_by_vaccine",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/usuario/va/1",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"usuario",
+								"va",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find_by_name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/usuario?name=",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"usuario"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "persist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"name\",\r\n    \"lastName\": \"lastName\",\r\n    \"ci\": 1234567890,\r\n    \"email\": \"email@email.com\",\r\n    \"idRol\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9090/usuario",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"name\",\r\n    \"lastName\": \"lastName\",\r\n    \"ci\": 123456789,\r\n    \"email\": \"email@email.com\",\r\n    \"birthdate\": \"2022-03-17\",\r\n    \"phone\": 12345678,\r\n    \"vaccinated\": true,\r\n    \"vacuna\": {\r\n        \"date\": \"2023-03-19\",\r\n        \"doses\": 1,\r\n        \"idVaccine\": 1\r\n    },\r\n    \"idRol\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9090/usuario/1",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"usuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:9090/usuario/1",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"usuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

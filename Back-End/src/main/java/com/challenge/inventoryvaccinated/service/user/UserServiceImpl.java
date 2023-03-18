@@ -22,13 +22,11 @@ public class UserServiceImpl implements UserService{
 
     private final UserRepository repository;
     private final ConfigRepository configRepository;
-    private final VaccinationRepository vaccinationRepository;
 
     @Autowired
-    public UserServiceImpl(UserRepository repository, ConfigRepository configRepository, VaccinationRepository vaccinationRepository) {
+    public UserServiceImpl(UserRepository repository, ConfigRepository configRepository) {
         this.repository = repository;
         this.configRepository = configRepository;
-        this.vaccinationRepository = vaccinationRepository;
     }
 
     @Override
@@ -168,6 +166,7 @@ public class UserServiceImpl implements UserService{
     public User persist(UserDto dto) {
         User entity = new User();
         BeanUtils.copyProperties(dto, entity);
+        entity.setVaccinated(false);
         repository.save(entity);
         persistConfig(entity.getId(), dto.getCi(), dto.getEmail());
         return entity;

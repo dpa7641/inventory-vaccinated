@@ -24,6 +24,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
             "(SELECT r.name FROM usuario.rol r WHERE u.id_rol = r.id) rol_name\n" +
             "FROM usuario.user u WHERE u.id_rol = :idRol ORDER BY u.id DESC", nativeQuery = true)
     List<Object[]> findAllUserVoByRol(@Param("idRol") int idRol);
+    
     @Query(value = "SELECT u.id, u.name, u.last_name, u.ci, u.email, u.birthdate, u.phone, u.vaccinated, u.id_rol,\n" +
             "(SELECT r.name FROM usuario.rol r WHERE u.id_rol = r.id) rol_name\n" +
             "FROM usuario.user u WHERE u.vaccinated = :vaccinated ORDER BY u.id DESC", nativeQuery = true)

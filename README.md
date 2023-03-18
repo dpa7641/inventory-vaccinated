@@ -1,10 +1,8 @@
 # inventory-vaccinated
-reto de programación de kruger
+Reto de programación de Kruger
 
+# Espeficicacion
 
-# Desarrollo
-El desarrollo de la apliacion fue tomado en base a los requerimientos solicitados
-inicialmente de desarrollo en back-end
+- El desarrollo del reto dado se realizo con la creacion de la base de datos, back-end y finalmente front-end.
+- Dentro de cada carpeta se llega a tener un propio read.me expicificando el desarrollo y ejecuccion de los mismos, asi como notas a tomar en cuenta
 
-# ejecucion
-Las intrucciones solicitados se encuentran dentro de su propio readme.md de cada una de las carpetas 

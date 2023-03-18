@@ -15,4 +15,6 @@ public class VaccinationVo {
     private int doses;
     private int idUser;
     private int idVaccine;
+    private String vaccineName;
+    private String userName;
 }
