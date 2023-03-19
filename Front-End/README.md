@@ -48,6 +48,7 @@ Para la ejecucion de la apliacion en un entorno nuevo es necesario contar con lo
   * Ingresar en el proyecto (dentro de la cacrpeta front-end) y ejecutar dentro del mismo el Visual Studio Code 
   * Dar los permisos necesarios (en caso de requerirlos)
   * En una consola dentro del proyecto ejecutar el comando: npm install
+  * Ejecucion del back-end que se encuentra en la otra carpeta (esto es necesario para el consumo de los endpoints)
   * Ejecutar el proyeto con el comando: npm run dev
 - Con las anteriores instrucciones el proyecto se estara ejecutando, por lo que puede llegar a visualizarlo desde el navegador diriguiendo a la direccion: http://localhost:5173
 - Las entidades desarrolladas se pueden llegar a visualizar desde la direccion http://localhost:5173/dashboard/
